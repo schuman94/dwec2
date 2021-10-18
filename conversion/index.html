@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>El tipo de NaN</h3>
+    <button onclick="p1.innerHTML = typeof(NaN)">Ejecutar: typeof(NaN)</button>
+    <button onclick="p1.innerHTML = typeof(0/0)">Ejecutar: typeof(0/0)</button>
+    <button onclick="p1.innerHTML = typeof(0 - 'a')">Ejecutar: typeof(0 - "a")</button>
+    <p id="p1" style="color: red">Resultado</p>
+    <p>NaN es un dato de tipo number debido a que representa los números que no tienen una representación en un contexto numérico</p>
+
+    <h3>Decimales de precisión</h3>
+    <button onclick="p2.innerHTML = 9999999999999999">Ejecutar: 999999999999999</button>
+    <button onclick="p2.innerHTML = 1.00000000000000003">Ejecutar: 1.00000000000000003</button>
+    <p id="p2" style="color: red">Resultado</p>
+    <p>JavaScript tiene 16 decimales de precisión, si supera dicho límite, redondea.</p>
+
+    <h3>Suma de arrays vacios</h3>
+    <button onclick="p3.innerHTML = [] + []">Ejecutar: [] + []</button>
+    <p id="p3" style="color: red">Resultado</p>
+    <p>
+        El carácter "+" actua como operador de concatenación en este contexto, por lo que implícitamente los arrays se convierten en cadenas.
+        Al estar vacios, devuelven la cadena vacia, y la suma de dos cadenas vacias es una cadena vacia.
+    </p>
+
+    <h3>Objeto a cadena</h3>
+    <button onclick="p4.innerHTML = String({})">Ejecutar: [] + {}</button>
+    <button onclick="p4.innerHTML = [] + {}">Ejecutar: str({})</button>
+    <p id="p4" style="color: red">Resultado</p>
+    <p>
+        La representacion de un objeto como cadena es un literal [object Object]. Si a un array vacio le sumas un objeto,
+        el array se convertirá implicitamente en cadena vacia y se concatenará con el literal quedando igual.
+    </p>
+
+    <h3>true en contexto numerico</h3>
+    <button onclick="p5.innerHTML = true + true + true">Ejecutar: true + true + true</button>
+    <button onclick="p5.innerHTML = true - true">Ejecutar: true - true</button>
+    <p id="p5" style="color: red">Resultado</p>
+    <p>
+        true en un contexto numérico se convierte en 1. Por lo que simplemente se están sumado y restando "unos".
+    </p>
+
+    <h3>Comparación true = 1</h3>
+    <button onclick="p6.innerHTML = true == 1">Ejecutar: true == 1</button>
+    <button onclick="p6.innerHTML = true === 1">Ejecutar: true === 1</button>
+    <p id="p6" style="color: red">Resultado</p>
+    <p>
+        Si comparamos true == 1, nos devuelve true.
+        Sin embargo al comparar true === 1, nos devuelve false, ya que se comparan los tipos antes de realizar cualquier conversión.
+    </p>
+
+    <h3>Comparación [] = 0</h3>
+    <button onclick="p7.innerHTML = [] == 0">Ejecutar: [] == 0</button>
+    <button onclick="p7.innerHTML = [] === 0">Ejecutar: [] === 0</button>
+    <p id="p7" style="color: red">Resultado</p>
+    <p>
+        En contexto numerico, un array vacio devuelve 0.
+        Sin embargo al comparar [] === 0, nos devuelve false, ya que se comparan los tipos antes de realizar cualquier conversión.
+    </p>
+
+    <h3>Comparación numero +- cadena</h3>
+    <button onclick="p8.innerHTML = 9 + '1'">Ejecutar: 9 + "1"</button>
+    <button onclick="p8.innerHTML = '9' + 1">Ejecutar: "9" + 1</button>
+    <button onclick="p8.innerHTML = 9 - '1'">Ejecutar: 9 - "1"</button>
+    <p id="p8" style="color: red">Resultado</p>
+    <p>
+        El caracter "+" actua como operador de concatenación si al menos uno de los dos operandos es una cadena.
+        El caracter "-" solo tiene contexto numérico, por lo que aquí, la cadena "1" se convierte a número.
+</body>
+</html>
