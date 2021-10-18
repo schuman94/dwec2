@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Guardamos la edad en una variable.
+        var respuesta = prompt("Introduce una edad");
+
+        if (respuesta < 0) {
+            alert("La edad introducida no es válida");
+        } else {
+            if (respuesta <= 12) {
+                alert("Niño");
+            } else if (respuesta <= 26) {
+                alert("Joven");
+            } else if (respuesta <= 60) {
+                alert("Adulto");
+            } else {
+                alert("Jubilado");
+            }
+        }
+
+    </script>
+</body>
+</html>

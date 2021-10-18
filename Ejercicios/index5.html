@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Declaramos una varible que alternará entre true y false en cada ciclo.
+        let enPunto = true;
+
+        for (hora = 9; hora < 22;) {
+
+            /*Se escribirá en el html:
+              El valor de la variable hora
+              La cadena ":00" o ":30" dependiendo del valor de enPunto
+              Un salto de linea
+            */
+            document.write(hora + (enPunto ? ":00" : ":30") + "<br>");
+
+            //Cuando la hora mostrada sea "y media", sumaremos 1 a la hora
+            if (!enPunto) {
+                hora++;
+            }
+
+            //Alternamos el valor de enPunto
+            enPunto = !enPunto;
+        }
+    </script>
+</body>
+</html>
