@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Introduce el nº de componentes</p>
+    <input id="texto" type="text" placeholder="numero">
+    <button onclick="probar()">Probar</button>
+    <p id="parrafo"></p>
+
+    <script>
+      function probar() {
+        let num = document.getElementById("texto").value;
+        let resultado;
+        if (isNaN(num)) {
+          resultado = "Introduce un numero correcto"
+          document.getElementById("texto").value = "";
+        } else if (num <= 0) {
+          resultado = "not a group";
+        } else if (num == 1) {
+          resultado = "solo";  
+        } else if (num == 2) {
+          resultado = "duet";
+        } else if (num == 3) {
+          resultado = "trio";
+        } else if (num == 4) {
+          resultado = "quartet";
+        } else {
+          resultado = "thes es a large group";
+        }
+        document.getElementById("parrafo").innerHTML = resultado;
+      } 
+    </script>
+</body>
+</html>
