@@ -7,20 +7,49 @@
     <title>Document</title>
 </head>
 <body>
-  <p>Introduce un numero</p>
-  <input id="texto" type="text" placeholder="numero">
-  <button onclick="probar()">Probar</button>
+  <label for="texto">Introduce un número:</label>
+  <input id="texto" type="text">
+  <button onclick="forClasico()">for clásico</button>
+  <button onclick="forIn()">for in</button>
+  <button onclick="forOf()">for of</button>
   <p id="parrafo"></p>
 
   <script>
-    let num = document.getElementById("texto").value;
-    let resultado;
-    if (num < 1000) {
-
-    } else {
-      document.getElementById("parrafo").innerHTML = "Introduce un numero menor a 1000";
-      document.getElementById("texto").value = "";
+    function forClasico() {
+      document.getElementById("parrafo").innerHTML = "";
+      let cadena = document.getElementById("texto").value;
+      if (isNaN(cadena) || cadena >= 1000) {
+        document.getElementById("parrafo").innerHTML = "Error: Introduce un numero menor a 1000";
+      } else {
+        for (let i = 0; i < cadena.length; i++) {
+          document.getElementById("parrafo").innerHTML += cadena[i] + "<br>";
+        }
+      }
     }
-  </script>
+
+    function forIn() {
+      document.getElementById("parrafo").innerHTML = "";
+      let cadena = document.getElementById("texto").value;
+      if (isNaN(cadena) || cadena >= 1000) {
+        document.getElementById("parrafo").innerHTML = "Error: Introduce un numero menor a 1000";
+      } else {
+        for (let i in cadena) {
+          document.getElementById("parrafo").innerHTML += cadena[i] + "<br>";
+        }
+      }
+    }
+
+    function forOf() {
+      document.getElementById("parrafo").innerHTML = "";
+      let cadena = document.getElementById("texto").value;
+      if (isNaN(cadena) || cadena >= 1000) {
+        document.getElementById("parrafo").innerHTML = "Error: Introduce un numero menor a 1000";
+      } else {
+        for (let i  of cadena) {
+          document.getElementById("parrafo").innerHTML += i + "<br>";
+        }
+      }
+    }
+    </script>
 </body>
 </html>

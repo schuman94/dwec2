@@ -5,9 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="bucleFor.js" defer></script>
 </head>
 <body>
-    <p id="demo"></p>
+    <script>
+        let datos = [5, 23, 12, 85];
+
+        let sumaDatos = 0;
+        alert("Bucle for clásico");
+
+        for (let i = 0; i < datos.length; i++) {
+            sumaDatos += datos[i];
+            alert(sumaDatos);
+        }
+
+        sumaDatos = 0;
+        alert("Bucle for in");
+
+        for (let indice in datos) {
+            sumaDatos += datos[indice];
+            alert(sumaDatos);
+        }
+
+        sumaDatos = 0;
+        alert("Bucle for of");
+
+        for (let dato of datos) {
+            sumaDatos += dato;
+            alert(sumaDatos);
+        }
+    </script>
 </body>
 </html>
