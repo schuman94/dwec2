@@ -7,6 +7,61 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <label for="sospechoso"></label>
+    <select name="sospechoso" id="sospechoso">
+        <option value="Sr. Parkes">Sr. Parkes</option>
+        <option value="Sra. Van Cleve">Sra. Van Cleve</option>
+        <option value="Sr. Sparr">Sra. Sparr</option>
+        <option value="Sr. Kalehoff">Sr. Kalehoff</option>
+    </select>
+
+    <label for="habitacion"></label>
+    <select name="habitacion" id="habitacion">
+        <option value="el salón de baile">Salón de baile</option>
+        <option value="la galería">Galería</option>
+        <option value="la sala de billar">Sala de billar</option>
+        <option value="el comedor">Comedor</option>
+    </select>
+
+    <button onclick="comprobar()">Comprobar</button>
+    <p id="misterio"></p>
+
+    <script>
+        function comprobar() {
+            let resuelto = false;
+            let arma;
+            let sospechoso = document.getElementById("sospechoso").value;
+            let habitacion = document.getElementById("habitacion").value;
+
+            switch (true) {
+                case (habitacion == "el comedor" && sospechoso == "Sr. Parkes"):
+                    resuelto = true;
+                    arma = "cuchillo";
+                    break;
+                case (habitacion == "la galería" && sospechoso == "Sra. Van Cleve"):
+                    resuelto = true;
+                    arma = "trofeo";
+                    break;
+                case (habitacion == "la sala de billar" && sospechoso == "Sr. Sparr"):
+                    resuelto = true;
+                    arma = "palo";
+                    break;
+                case (habitacion == "el salón de baile" && sospechoso == "Sr. Kalehoff"):
+                    resuelto = true;
+                    arma = "veneno"
+                    break;
+                default:
+                    resuelto = false;
+                    break;
+            }
+
+            if (resuelto) {
+                document.getElementById("misterio").innerHTML = `${sospechoso} lo hizo en ${habitacion} con el ${arma}!`
+            } else {
+                document.getElementById("misterio").innerHTML = "Error: inténtalo de nuevo";
+            }
+        }
+
+    </script>
 </body>
 </html>
