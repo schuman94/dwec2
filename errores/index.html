@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p id="parrafo"></p>
+
+  <script>
+    let x = true;
+    function prueba() {
+      if (x == false) {
+        //Esto hace que el catch capture esta cadena
+        throw "error, la x vale false"
+      } else {
+        //Llamamos a una funcion que no existe para provocar el error.
+        noDefinida();
+      }
+    }
+    try {
+      prueba();
+    }
+    catch(cualquier_error) {
+      //Esto obtiene la propiedad message de errores predefinidos
+      document.getElementById("parrafo").innerHTML = cualquier_error.message;
+      //Con esto podemos mostrar el error (una cadena) que hemos creado con throw o el predefinido (object)
+      alert(cualquier_error);
+      console.log(typeof cualquier_error);
+    }
+  </script>
+</body>
+</html>
